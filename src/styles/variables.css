@@ -1,0 +1,11 @@
+/* ── CSS Variables ─────────────────────────────────── */
+:root {
+  --sky: #c8e6f5;
+  --sky-deep: #a8d4ee;
+  --card: rgba(255, 255, 255, 0.72);
+  --pink: #f4a7b9;
+  --rose: #e07898;
+  --navy: #2c5f82;
+  --text: #3a3a5c;
+  --soft: #7a9bbf;
+}

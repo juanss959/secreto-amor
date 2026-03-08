@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../styles/variables.css';
+@import '../styles/animations.css';
+
+:root {
+  --sky: #c8e6f5;
+  --sky-deep: #a8d4ee;
+  --card: rgba(255, 255, 255, 0.72);
+  --pink: #f4a7b9;
+  --rose: #e07898;
+  --navy: #2c5f82;
+  --text: #3a3a5c;
+  --soft: #7a9bbf;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.13; }
+  90% { opacity: 0.13; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.bg-heart {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0.13;
+  animation: floatUp linear infinite;
+  z-index: 0;
+}
+
+.reveal-animate {
+  animation: popIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hearts-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.tab-active-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5px;
+  left: 20%;
+  right: 20%;
+  height: 2.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--pink), var(--rose));
+}
